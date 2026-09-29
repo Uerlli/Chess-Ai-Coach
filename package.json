@@ -43,8 +43,14 @@
     "jiti": "^2.6.1"
   },
   "engines": {
-    "node": ">=22.0.0",
+    "node": "20.x",
     "pnpm": ">=9.0.0"
   },
-
+  {
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+      }
+    }
+  }
 }
