@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Sans+Symbols+2&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Background — obsidian / deep walnut / warm charcoal */
+  --background-50: 0.150 0.004 70;
+  --background-100: 0.185 0.006 65;
+  --background-200: 0.220 0.008 62;
+  --background-300: 0.270 0.010 60;
+  --background-400: 0.340 0.013 62;
+  --background-500: 0.430 0.016 64;
+  --background-600: 0.540 0.017 68;
+  --background-700: 0.660 0.018 70;
+  --background-800: 0.780 0.018 72;
+  --background-900: 0.880 0.016 78;
+  --background-950: 0.940 0.012 82;
+
+  /* Foreground — ivory / paper */
+  --foreground-50: 0.280 0.008 65;
+  --foreground-100: 0.380 0.010 70;
+  --foreground-200: 0.480 0.012 75;
+  --foreground-300: 0.570 0.014 78;
+  --foreground-400: 0.660 0.016 82;
+  --foreground-500: 0.750 0.018 84;
+  --foreground-600: 0.830 0.018 85;
+  --foreground-700: 0.885 0.017 86;
+  --foreground-800: 0.920 0.016 87;
+  --foreground-900: 0.945 0.014 87;
+  --foreground-950: 0.968 0.010 88;
+
+  /* Primary — muted brass */
+  --primary-50: 0.280 0.024 78;
+  --primary-100: 0.380 0.038 78;
+  --primary-200: 0.470 0.052 78;
+  --primary-300: 0.550 0.064 78;
+  --primary-400: 0.610 0.072 78;
+  --primary-500: 0.665 0.080 79;
+  --primary-600: 0.725 0.084 80;
+  --primary-700: 0.795 0.078 82;
+  --primary-800: 0.865 0.062 84;
+  --primary-900: 0.918 0.046 85;
+  --primary-950: 0.960 0.030 85;
+
+  /* Accent — oxidized gold */
+  --accent-50: 0.240 0.020 78;
+  --accent-100: 0.320 0.034 78;
+  --accent-200: 0.400 0.048 78;
+  --accent-300: 0.470 0.058 78;
+  --accent-400: 0.520 0.064 78;
+  --accent-500: 0.565 0.070 78;
+  --accent-600: 0.635 0.074 79;
+  --accent-700: 0.720 0.068 80;
+  --accent-800: 0.820 0.058 82;
+  --accent-900: 0.900 0.044 84;
+  --accent-950: 0.950 0.028 85;
+
+  /* Secondary — deep british green */
+  --secondary-50: 0.185 0.014 162;
+  --secondary-100: 0.235 0.019 161;
+  --secondary-200: 0.300 0.024 160;
+  --secondary-300: 0.370 0.030 160;
+  --secondary-400: 0.450 0.036 160;
+  --secondary-500: 0.530 0.044 160;
+  --secondary-600: 0.620 0.050 160;
+  --secondary-700: 0.720 0.050 160;
+  --secondary-800: 0.830 0.040 161;
+  --secondary-900: 0.900 0.030 162;
+  --secondary-950: 0.950 0.020 162;
+
+  /* Typography roles */
+  --font-heading: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-label: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: oklch(var(--background-50));
+    color: oklch(var(--foreground-900));
+    font-family: var(--font-body);
+  }
+
+  ::selection {
+    background-color: oklch(var(--primary-500) / 0.32);
+    color: oklch(var(--foreground-950));
+  }
+}
+
+@layer components {
+  .chess-piece {
+    font-family: 'Noto Sans Symbols 2', 'Segoe UI Symbol', 'Apple Symbols', serif;
+    line-height: 1;
+  }
+
+  .piece-white {
+    color: oklch(var(--foreground-950));
+    -webkit-text-stroke: 1px oklch(var(--background-50) / 0.55);
+  }
+
+  .piece-black {
+    color: oklch(var(--background-50));
+    -webkit-text-stroke: 1px oklch(var(--foreground-900) / 0.30);
+  }
+
+  .eyebrow {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(var(--background-100));
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--background-300));
+  border: 2px solid oklch(var(--background-100));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(var(--background-400));
+}
